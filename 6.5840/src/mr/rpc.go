@@ -8,6 +8,7 @@ package mr
 
 import "os"
 import "strconv"
+import "time"
 
 //
 // example to show how to declare the arguments
@@ -29,6 +30,18 @@ type TaskArgs struct {
 type TaskReply struct {
 	TaskName string
 }
+
+type Task struct {
+	Status 		string
+	WorkerId 	string
+	StartedAt 	time.time
+}
+
+const (
+	IDLE = 0
+	IN_PROGRESS = 1
+	COMPLETED = 2
+)
 
 // Add your RPC definitions here.
 
